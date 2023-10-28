@@ -103,8 +103,8 @@ func (m *Metrics) ProcessFiles(filenames []string) error {
 	if hostname == "ftdc" { // from docker-compose
 		port = 3030
 		if len(filenames) > 3 { // avoid OOM killer
-			fmt.Println("* limits to latest 3 files in a Docker container")
-			filenames = filenames[len(filenames)-30:]
+			fmt.Println("* limits to latest 30 files in a Docker container")
+			// filenames = filenames[len(filenames)-30:]
 		}
 	}
 	diag := NewDiagnosticData()
