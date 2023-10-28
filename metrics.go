@@ -97,9 +97,9 @@ func (m *Metrics) ProcessFiles(filenames []string) error {
 		// log.Println(fmt.Sprintf("http://localhost:%d%v", port, endpoint))
 		return errors.New("no valid data file found")
 	}
-	if m.latest > 0 && m.latest < len(filenames) {
-		filenames = filenames[len(filenames)-m.latest:]
-	}
+	// if m.latest > 0 && m.latest < len(filenames) {
+	// 	filenames = filenames[len(filenames)-m.latest:]
+	// }
 	if hostname == "ftdc" { // from docker-compose
 		port = 3030
 		if len(filenames) > 3 { // avoid OOM killer
